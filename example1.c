@@ -44,19 +44,6 @@ void add_edge(Graph *graph, int source, int destination) {
     graph->adjacency_list[destination] = new_node;
 }
 
-// Afișează lista de adiacență (opțional, pentru verificare)
-void print_graph(Graph *graph) {
-    for (int i = 0; i < graph->num_vertices; i++) {
-        printf("Restaurant %d este conectat cu: ", i);
-        Node *current = graph->adjacency_list[i];
-        while (current) {
-            printf("%d ", current->value);
-            current = current->next;
-        }
-        printf("\n");
-    }
-}
-
 // Verifică dacă două restaurante sunt conectate direct
 int are_directly_connected(Graph *graph, int a, int b) {
     Node *current = graph->adjacency_list[a];
